@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+    <!-- header -->
+    <header class="main-header">
+        <h1 class="jumping-title">
+            <span>E</span><span>X</span><span>P</span><span>L</span><span>O</span><span>R</span><span>I</span><span>N</span><span>G</span><span>&nbsp;</span><span>F</span><span>O</span><span>R</span><span>M</span><span>U</span><span>L</span><span>A</span><span>&nbsp;</span><span>1</span><span>&nbsp;</span><span>D</span><span>Y</span><span>N</span><span>A</span><span>M</span><span>I</span><span>C</span><span>S</span>
+        </h1>
+
+        <p>
+            Uncovering the High-Speed Strategy and Human Drama that Define the World of Formula 1.
+        </p>
+    </header>   
+
+    <div class="chapter-container">
+        <header class="chapter-header">
+            <h2>Chapter 1: Global Insights</h2>
+            <h3>Formula 1 is a worldwide competition, but the circuit is more than simply asphalt; 
+                it's a mechanical and physical maze formed by the diverse topography of the globe. 
+                This chapter analyzes the extremes of the circuit, illustrating how altitude determines the fine line that separates drivers' 
+                record-breaking speed from complete physical fatigue.
+            </h3>
+        </header>
+    </div>
+
+    <!-- dashboard -->
+        <div class="dashboard-grid">
+
+        <div class="chart-card large-card map-dashboard-container">
+    
+            <div class="map-visual-column">
+                <h2>Global Circuit Map: The Altitude Paradox</h2>
+                <div id="GlobalMapChart"></div>
+            </div>
+
+            <div class="map-insight-column">
+                <p class="insight-text">
+                   Notice how the <strong>map markers</strong> shift? By encoding <strong>circuit coordinates</strong> with <strong>mark size</strong> and <strong>color intensity</strong>, the data instantly spotlights F1's <strong>geographic extremes</strong>. 
+                   In F1, <strong>thin air</strong> completely changes the rules of physics. Racing at <strong>higher altitudes</strong>, meaning fewer air molecules, results in a massive drop in <strong>aerodynamic drag</strong>, allowing cars to hit blistering, 
+                   <strong>record-breaking top speeds</strong> on the straights. Conversely, this thinner air means less oxygen, triggering <strong>faster muscle fatigue</strong> and placing <strong>punishing physical demands</strong> on the drivers.
+                </p>
+            </div>
+        </div>
+        </div>
+        
+        <div class="chapter-container">
+    
+        <header class="chapter-header">
+            <h2>Chapter 2: Exploring the Constructors</h2>
+            <h3>
+                Beyond the driving wheel, Formula 1 is an engineering conflict where dynasties are established through years of deliberate 
+                risk-taking and unrelenting innovation. In order to determine precisely who established the grid's rhythm, we analyze the DNA 
+                of these contemporary champions in this chapter by documenting their significant win totals and the ups and downs of their 
+                championship supremacy.
+            </h3>
+        </header>
+        </div>
+
+        <div class="chapter-charts-row">
+
+            <div class="chart-card">
+                <h2>All-Time Famous Constructors and Total Wins</h2>
+                <div id="ConstructorWin"></div> 
+                <div class="chart-insight-box">
+                    <p class="insight-text">
+                        This <strong>lollipop chart</strong> illustrates the <strong>famous teams</strong> and their <strong>total wins</strong> since 2000. By matching the team colors directly to the <strong>dominance timeline</strong> next to it, you can instantly see how legends like 
+                        <span class="ferrari-text">Ferrari</span>, <span class="mercedes-text">Mercedes</span>, and <span class="redbull-text">Red Bull</span> translate their <strong>historical eras</strong> into <strong>pure numbers</strong>. It turns <strong>decades of track rivalry</strong> into a <strong>clear, visual leaderboard</strong>, showcasing exactly who has <strong>ruled modern motorsport</strong>.</p>
+                </div>
+            </div>
+
+        <div class="chart-card"> 
+        <div class="chart-header-inline">
+            <h2>Constructor Dominance Over Time</h2>
+            
+            <div class="local-filter-box">
+                <label for="seasonSelect">Select Season:</label>
+                <select id="seasonSelect">
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+
+                    </select>
+            </div>
+        </div>
+        <div id="dominanceChart"></div> 
+        
+        <div class="chart-insight-box">
+            <p class="justification-text">
+                This <strong>line graph</strong> tracks <strong>championship points</strong> over a <strong>24-year period</strong> demonstrating the rise and fall of F1's <strong>contemporary dynasties</strong>. 
+                You can easily follow the <strong>changing dynamics</strong> of the sport by following the peaks of each <strong>color-coded line</strong>, starting with the early <span class="redbull-text">Red Bull</span> and <span class="ferrari-text">Ferrari</span> periods and ending with <span class="mercedes-text">Mercedes'</span> <strong>historic supremacy</strong>. 
+                It depicts the <strong>precise times</strong> when <strong>engineering advancements</strong> or <strong>racing rules</strong> changed a team's <strong>dominance</strong> to establish a new <strong>grid leader</strong>. 
+                <strong>Select</strong> the season to analyse your <strong>favourite team</strong>!
+            </p>
+        </div>
+        </div>
+            
+        </div>
+
+        <div class="chapter-container stack-layout">
+            <header class="chapter-header">
+                <h2>Chapter 3: Diving into the Circuits and Drivers</h2>
+                <h3>The real theater of Formula 1 takes place at the connection of strategic accuracy and human instinct, beyond the factory and boardroom. 
+                    The worldwide origins of our grid's symbols, the tactical lessons of their race-day implementation, and the split-second decisions made 
+                    in the pit lane that eventually decide the winner are all explored in this final chapter.
+                </h3>
+            </header>
+        </div>
+
+        <div class="chart-card large-map-card">
+            <h2>Chasing the Apex: The Global Footprint of F1 Drivers</h2>
+            <div id="driverMapChart"></div> 
+            <div class="chart-insight-box">
+                <p class="insight-text">
+                    This <strong>choropleth map</strong> illustrates the <strong>global reach</strong> of Formula 1 by highlighting 
+                    <strong>nations</strong> according to the number of <strong>distinct drivers</strong> they have produced since 1950. 
+                    With the <strong>greatest concentration of talent</strong> on the grid, the <strong>United Kingdom</strong> is quickly established as the sport's 
+                    <strong>historic heartland</strong>. The map highlights how racing has rapidly evolved to find <strong>elite talent</strong> all throughout the world, 
+                    even while <strong>Europe</strong> constitutes a <strong>strongly concentrated core</strong> of <strong>racing tradition</strong>. 
+                    It turns an ordinary list of <strong>driver nationalities</strong> into a <strong>graphic representation</strong> of a <strong>dynamic, global sports business</strong>.
+                </div>
+        </div>
+
+        <div class="chapter-bottom-row">
+            
+            <div class="chart-card">
+                <h2>Legendary Drivers & Total Wins</h2>
+                <div id="driverWinsChart"></div>
+                <div class="chart-insight-box">
+                    <p class="justification-text">
+                        This <strong>personalized lollipop chart</strong> tracks every <strong>race victory</strong> that Formula 1's most <strong>famous legends</strong> 
+                        have battled for over the years, climbing their <strong>career heights</strong>. Each <strong>personalized trophy marker</strong>, which is color-coded to coordinate 
+                        with the <strong>historic team color</strong> that a driver is best known for, represents the <strong>precise apex</strong> of a driver's <strong>career victories</strong>. 
+                        It transforms <strong>raw championship records</strong> into a <strong>stunning portrait</strong> of <strong>racing royalty</strong>, from <span class="mercedes-text">Hamilton's</span> contemporary <span class="mercedes-text">Mercedes</span> 
+                        domination to <span class="ferrari-text">Schumacher's</span> iconic red <span class="ferrari-text">Ferrari</span> streak.
+                    </p>
+                </div>
+            </div>
+
+            <div class="chart-card"> 
+                <h2>Qualifying VS. Race: Pole-to-Win Conversion Rate (%)</h2>
+                <div id="qualifyingVsRaceChart"></div> 
+                <div class="chart-insight-box">
+                    <p class="insight-text">
+                        <strong>Pole position</strong> showcases <strong>single-lap qualifying pace</strong>, but sustaining that advantage over the <strong>full Grand Prix distance</strong> 
+                        is necessary for <strong>Sunday's race</strong>. This chart tracks how well these <strong>eleven legends</strong> turned <strong>front-row clear air</strong> into a <strong>triumph</strong> 
+                        by distinguishing each occasion they started first. While <strong>lower conversion rates</strong> highlight <strong>single-lap qualifying experts</strong> whose <strong>vehicle packages</strong> or 
+                        <strong>race stamina</strong> faced more difficult endurance battles, <strong>top-ranked drivers</strong> thrive at <strong>controlling speed</strong>, <strong>managing tires</strong>, and executing 
+                        <strong>perfect race tactics</strong> under duress.
+                    </p>
+                </div>
+            </div>
+
+        </div> 
+        
+        <div class="chapter-bottom-row">
+
+            <div class="chart-card">
+                <h2>Average Pit Stops per Driver/Car Across Recent Modern Eras (2018-Present)</h2>
+                <div id="pitStopHeatmapChart"></div> 
+                <div class="chart-insight-box">
+                    <p class="justification-text">
+                        By plotting the <strong>average number of pit stops</strong> per car over the course of <strong>recent racing seasons</strong>, 
+                        this <strong>heatmap</strong> reveals the <strong>core strategy profile</strong> of each <strong>circuit</strong>. 
+                        <strong>High-degradation sites</strong> or <strong>abrupt weather chaos</strong> suddenly flame bright scarlet, whereas steady, 
+                        <strong>low-wear circuits</strong> like <strong>Monaco</strong> and <strong>Monza</strong> remain dependably pale. 
+                        At the <strong>2023 Dutch Grand Prix</strong>, a series of <strong>unforeseen downpours</strong> triggered an <strong>unprecedented tire scramble</strong> 
+                        that averaged more than four stops per driver. This is the <strong>ultimate tactical anomaly</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2>Total Cumulative Pit Stops by Race Lap Number for Contemporary F1 legends (2011-2024)</h2>
+                <div id="pitStopStreamChart"></div> 
+                <div class="chart-insight-box">
+                    <p class="justification-text">
+                        This <strong>streamgraph</strong> shows the <strong>precise live chronology</strong> and <strong>strategic rhythm</strong> of when those stops occur. 
+                        The graphic shows <strong>clear, wave-like bulges</strong> as the streams sharply swell by following each <strong>tire change</strong> these <strong>five contemporary titans</strong> have made since 2011. 
+                        Between <strong>Laps 12 and 20</strong>, the first <strong>enormous wave</strong> crests, signaling the hectic <strong>opening pit window</strong> where teams rush to swap out their starting tires. 
+                        Around <strong>Laps 38 to 46</strong>, a second, <strong>milder swell</strong> emerges, aptly reflecting the <strong>tactical boundary</strong> between a daring <strong>endurance drive</strong> to the checkered flag 
+                        and the execution of a <strong>typical two-stop race plan</strong>. <strong>Click</strong> on the <strong>legend labels</strong> to filter the data and focus on a <strong>specific driver</strong>!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chapter-container stack-layout">
+            <header class="chapter-header">
+                <h2>Chapter 4: Formula 1's Fatal History </h2>
+                <h3> The history of Formula 1 is defined by the bravery of drivers who raced when there was no margin for error, 
+                    and the pursuit of speed has always come at a high cost. This chapter discusses the most difficult period in the sport's history, 
+                    outlining horrific turning points that compelled a safety revolution and irrevocably transformed the track from a dangerous place to a safe haven. 
+                </h3>
+            </header>
+        </div>
+
+        <div class="chapter-bottom-row">
+            
+            <div class="chart-card">
+                <h2>F1 Fatal Accidents Historical Dot Plot</h2>
+                <div id="fatalDotPlot"></div>
+                <div class="chart-insight-box">
+                    <p class="justification-text">
+                        In order to illustrate the <strong>hazardous origins</strong> of the sport, this <strong>timeline</strong> maps <strong>deadly accidents</strong> 
+                        across circuits and decades throughout the history of <strong>Formula 1</strong>. The graphic illustrates how the <strong>"safety revolution,"</strong> 
+                        marked by the <strong>sharp thinning of dots after 1994</strong>, reshaped the track from a site of <strong>perpetual danger</strong> into a <strong>contemporary era of strict protection</strong> 
+                        by emphasizing the <strong>session type</strong>. Click on the <strong>legend labels</strong> to filter the data and focus on <strong>specific accident types</strong>! 
+                    </p>
+                </div>
+            </div>
+
+            <div class="chart-card"> 
+                <h2>Driver Ages in Fatal Accidents</h2>
+                <div id="ageAccidentChart"></div> 
+                <div class="chart-insight-box">
+                    <p class="insight-text">
+                        A <strong>sobering concentration of occurrences</strong> occurs among drivers in their <strong>late twenties and thirties</strong>, 
+                        the <strong>golden years</strong> for nearly all of racing careers, when the <strong>age distribution</strong> of drivers involved in <strong>fatal accidents</strong> is 
+                        mapped. This <strong>histogram</strong> shows how drivers were more severely impacted by the sport's <strong>riskiest decades</strong> when they were at the <strong>height of their careers</strong>, 
+                        providing a <strong>grim reflection</strong> of the sport's past.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chapter-container stack-layout">
+            <header class="chapter-header">
+                <h2>Chapter 5: Zooming into Formula 1 in Australia </h2>
+                <h3>Australia has written its own distinctive chapter in the history of Formula 1, from the sun-drenched tarmac of Albert Park to the 
+                    pioneering tenacity of our country's most famous racers. In this last investigations, we go closer to home to honor the Australian 
+                    heroes whose legacy continues to inspire the sport ahead as well as the constructors who succeeded in mastering this difficult circuit. 
+                </h3>
+            </header>
+        </div>
+
+        <div class="chapter-bottom-row">
+            
+            <div class="chart-card">
+                <h2>Constructor Wins in Australian Grand Prix</h2>
+                <div id="donutChart"></div>
+                <div class="chart-insight-box">
+                    <p class="justification-text">
+                        <span class="ferrari-text">Ferrari</span> and <span class="mclaren-text">McLaren</span> are the <strong>most frequent winners</strong> 
+                        in the history of the circuit, and the <strong>Australian Grand Prix</strong> has long been a <strong>battlefield</strong> for Formula 1's <strong>titans</strong>. 
+                        This <strong>doughnut chart</strong> illustrates how a <strong>small number of renowned builders</strong> have defined the race's <strong>legacy</strong> while 
+                        leaving only a <strong>small portion of the glory</strong> for the rest of the pack, breaking down those <strong>historic victories</strong>. 
+                        <strong>Click</strong> on the <strong>slices of the doughnut chart</strong> to filter the data and <strong>constructor</strong>!
+                    </p>
+                </div>
+            </div>
+
+            <div class="chart-card"> 
+                <h2>Australian Most Successful Drivers by Points</h2>
+                <div id="aussieDriverChart"></div> <div class="chart-insight-box">
+                    <p class="insight-text">
+                        <strong>Australian drivers</strong> have had a <strong>significant effect</strong> on Formula 1 history by <strong>striking far above their weight</strong> 
+                        for a long time. This graphic celebrates the <strong>heroes</strong> whose <strong>unwavering perseverance</strong> has put <strong>Australia</strong> at the 
+                        forefront of the most competitive racing in the world by ranking the <strong>greatest point scorers</strong> in the nation. <strong>Australian drivers</strong> 
+                        have marked periods of Formula 1 in Australia, from the tenacity of pioneers like <strong>Alan Jones</strong> to the keen, contemporary accuracy of <strong>Oscar Piastri</strong>.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chapter-container stack-layout">
+            <div class="reference-content">
+            <p><strong>Student:</strong> Zainatul Zahirah binti Haslan (36851817)</p>
+            
+            <p><strong>References:</strong></p>
+            <ul>
+                <li>Google. (2026). Gemini (May 31 version) [Large language model]. https://gemini.google.com</li>
+                <li>Rao, R. (n.d.). <em>Formula 1 World Championship (1950 - 2022)</em>. Kaggle. https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020</li>
+                <li>Trotman, J. (2020). <em>Formula 1 Race Events</em>. Kaggle. https://www.kaggle.com/datasets/jtrotman/formula-1-race-events</li>
+            </ul>
+             </div>
+        </div>
+    
+
+        
+        
+    </main>
+
+
+    <footer>
+        <p>Data Visualisation 2 FIT2179 © Zainatul Zahirah Haslan 36851817 on 31/5/2026</p>
+    </footer>
+
+    <script src="main.js"></script>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,469 @@
+
+body, h1, h2, h3, h4, p, span, div {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+h1,h2, .jumping-title span {
+    font-family: 'Archivo Black', sans-serif !important;
+}
+
+p, h3, h4, footer {
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+/*body*/
+
+body {
+    background-image: url('F1_wallpaper2.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/*header*/
+
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.main-header h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 48px;
+    color: #1F2937;
+    margin-bottom: 30px;
+}
+
+.main-header p {
+    color: #000000;
+    font-size: 25px;
+    margin-top: 25px;
+    
+}
+
+.main-header h2, h4, footer {
+    font-family: 'Roboto', sans-serif;
+    color: #000000; /* Sets the text color to pure black */
+}
+
+/*title */
+.jumping-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+/*3d letters*/
+.jumping-title span {
+    color: #262626;
+    background: #ffffff;
+    padding: 8px 10px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+    display: inline-block;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3), 0 5px 0 #ccc;
+    animation: animate 0.6s ease-in-out infinite alternate;
+}
+
+/*wave timing*/
+.jumping-title span:nth-child(1)  { animation-delay: 0.05s; }
+.jumping-title span:nth-child(2)  { animation-delay: 0.10s; }
+.jumping-title span:nth-child(3)  { animation-delay: 0.15s; }
+.jumping-title span:nth-child(4)  { animation-delay: 0.20s; }
+.jumping-title span:nth-child(5)  { animation-delay: 0.25s; }
+.jumping-title span:nth-child(6)  { animation-delay: 0.30s; }
+.jumping-title span:nth-child(7)  { animation-delay: 0.35s; }
+.jumping-title span:nth-child(8)  { animation-delay: 0.40s; }
+.jumping-title span:nth-child(9)  { animation-delay: 0.45s; }
+.jumping-title span:nth-child(10) { animation-delay: 0.50s; }
+.jumping-title span:nth-child(11) { animation-delay: 0.55s; }
+.jumping-title span:nth-child(12) { animation-delay: 0.60s; }
+.jumping-title span:nth-child(13) { animation-delay: 0.65s; }
+.jumping-title span:nth-child(14) { animation-delay: 0.70s; }
+.jumping-title span:nth-child(15) { animation-delay: 0.75s; }
+.jumping-title span:nth-child(16) { animation-delay: 0.80s; }
+.jumping-title span:nth-child(17) { animation-delay: 0.85s; }
+.jumping-title span:nth-child(18) { animation-delay: 0.90s; }
+.jumping-title span:nth-child(19) { animation-delay: 0.95s; }
+.jumping-title span:nth-child(20) { animation-delay: 1.00s; }
+.jumping-title span:nth-child(21) { animation-delay: 1.05s; }
+.jumping-title span:nth-child(22) { animation-delay: 1.10s; }
+.jumping-title span:nth-child(23) { animation-delay: 1.15s; }
+.jumping-title span:nth-child(24) { animation-delay: 1.20s; }
+.jumping-title span:nth-child(25) { animation-delay: 1.25s; }
+.jumping-title span:nth-child(26) { animation-delay: 1.30s; }
+.jumping-title span:nth-child(27) { animation-delay: 1.35s; }
+.jumping-title span:nth-child(28) { animation-delay: 1.40s; }
+
+/*movement*/
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.3), 0 5px 0 #ccc, 0 15px 5px rgba(0,0,0,0);
+    }
+    100% {
+        transform: translateY(-15px);
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.2), 0 5px 0 #bbb, 0 15px 8px rgba(0,0,0,0.4);
+    }
+}
+
+/*dashboard*/
+
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap; /* Keeps them in one line */
+    overflow-x: auto;   /* Enables horizontal scrolling */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%
+}
+
+/*cards*/
+
+.chart-card {
+    background-color: #f8f9fa; 
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    min-height: 400px;
+    color: #333333; 
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column; 
+    width: 100%;            
+    max-width: 100%;       
+    min-width: 0;      
+    flex-shrink: 1;   
+    flex-grow: 1;
+}
+
+.chart-card h2 {
+    margin-bottom: 15px;
+
+    color: #e10600;
+}
+
+.large-card {
+    grid-column: span 2;
+}
+
+/*footer */
+
+footer {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #000000;
+}
+
+@media (max-width: 900px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .large-card {
+        grid-column: span 1;
+    }
+
+}
+/*2-column layout for map*/
+.map-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.map-visual-column {
+    flex: 2; 
+    width: 100%;
+}
+
+.map-insight-row {
+    flex: 1; 
+    padding-top: 15px;
+    background-color: #ffffff; 
+    border-top: 4px solid #e10600; 
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: 50px; 
+}
+
+.map-insight-row h3 {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.insight-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4b5563;
+    text-align: justify;
+}
+
+/*if the screen is too tight, stack them vertically automatically */
+@media (max-width: 1100px) {
+    .map-dashboard-container {
+        flex-direction: column;
+    }
+    .map-insight-column {
+        margin-top: 20px;
+        border-left: none;
+        border-top: 4px solid #e10600;
+    }
+}
+
+.chart-insight-box {
+    margin-top: 15px; 
+    padding-top: 12px;
+    border-top: 1px dashed #e0e0e0; /*divider to separate graphic from text */
+}
+
+.insight-text {
+    font-size: 1.2rem; 
+    line-height: 1.5;
+    color: #4b5563; 
+    text-align: justify; 
+    margin: 0;
+}
+
+.metric-justification-box {
+    margin-top: 18px;         
+    padding-top: 14px;
+    border-top: 1px dashed #e2e8f0; 
+}
+
+.justification-text {
+    font-size: 1.2rem;        
+    line-height: 1.55;         
+    color: #4b5563;          
+    text-align: justify;  
+    margin: 0;
+}
+
+.page-wrapper {
+    width: 90%;            
+    max-width: 1200px;     
+    margin: 0 auto;        
+    padding: 20px 0;
+}
+
+/*take full layout width*/
+.chapter-container {
+    width: 100%;            
+    max-width: 1200px;       
+    margin: 0 auto 40px auto; 
+    box-sizing: border-box;
+    background-color: #f8f9fa; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.chapter-header h2 {
+    margin: 0 0 20px 0;;
+    font-size: 1.5rem;
+    color: #1f2937;
+}
+
+/*splits two chart cards into a 50-50 side by side row */
+.chapter-charts-row, .chapter-bottom-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px; 
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.chapter-charts-row .chart-card {
+    flex: 1;
+    min-width: 0; 
+    box-sizing: border-box;
+}
+
+.chapter-container.stack-layout {
+    display: block; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 30px; 
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-container.reference {
+    display: block; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 30px; 
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.large-map-card {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+
+.chapter-bottom-row {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Standardizes the bottom cards so they split perfectly 50/50 */
+.chapter-bottom-row .chart-card {
+    flex: 1;
+    min-width: 0;
+}
+
+.chart-header-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 5px;
+}
+
+.chart-header-inline h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.local-filter-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.local-filter-box label {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.local-filter-box select {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #E10600;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.insight-text strong {
+    color: #e10600; 
+    font-weight: 700; 
+    font-size: 0.95em; 
+}
+
+.insight-text strong, .justification-text strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.ferrari-text {
+    color: #E10600; 
+    font-weight: bold;
+}
+
+.mercedes-text {
+    color: #00A19B; 
+    font-weight: bold;
+}
+
+.redbull-text {
+    color: #1E41FF; 
+    font-weight: bold;
+}
+
+.mclaren-text {
+    color: #FF8700; 
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+    .your-container-class { 
+        display: flex;
+        flex-direction: column; 
+    }
+    
+    .chart-card {
+        width: 100%; 
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+@media (max-width: 900px) {
+    .chapter-charts-row, 
+    .chapter-bottom-row {
+        flex-direction: column !important; 
+    }
+
+    .chart-card {
+        min-width: 100% !important;
+        margin-bottom: 20px;
+    }
+}
+
+reference {
+    text-align: left; 
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    font-size: 0.85rem; 
+    color: #555;        
+}
+
+reference ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+reference li {
+    margin-bottom: 10px; 
+}
